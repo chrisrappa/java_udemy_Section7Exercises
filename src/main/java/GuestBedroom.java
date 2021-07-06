@@ -1,13 +1,13 @@
 public class GuestBedroom extends Bedroom{
 
-  String numWalls;
-  String color;
-  String floorType;
-  String lightSource;
-  String bedSize;
-  String deskColor;
-  String dresserColor;
-  String TVSize;
+  private String numWalls;
+  private String color;
+  private String floorType;
+  private String lightSource;
+  private String bedSize;
+  private String deskColor;
+  private String dresserColor;
+  private String TVSize;
 
   @Override
   public String addWalls(String numWalls) {
@@ -49,16 +49,54 @@ public class GuestBedroom extends Bedroom{
     return super.addTV(TVSize);
   }
 
-  public GuestBedroom() {
-    this.numWalls = addWalls("4");
-    this.floorType = addFloor("Tile");
-    this.color = addPaint("White");
-    this.lightSource = addLight("Ceiling Fan");
-    this.bedSize = addBed("King");
-    this.TVSize = addTV("56in");
-    this.deskColor = addDesk("White");
-    this.dresserColor = addDresser("White");
+  public GuestBedroom(String numWalls,
+                      String floorType,
+                      String color,
+                      String lightSource,
+                      String bedSize,
+                      String TVSize,
+                      String deskColor,
+                      String dresserColor) {
+
+    this.numWalls = numWalls;
+    this.floorType = floorType;
+    this.color = color;
+    this.lightSource = lightSource;
+    this.bedSize = bedSize;
+    this.TVSize = TVSize;
+    this.deskColor = deskColor;
+    this.dresserColor = dresserColor;
   }
 
+  public String getNumWalls() {
+    return numWalls;
+  }
 
+  public String getColor() {
+    return color;
+  }
+
+  public String getFloorType() {
+    return floorType;
+  }
+
+  public String getLightSource() {
+    return lightSource;
+  }
+
+  public String getBedSize() {
+    return bedSize;
+  }
+
+  public String getDeskColor() {
+    return deskColor;
+  }
+
+  public String getDresserColor() {
+    return dresserColor;
+  }
+
+  public String getTVSize() {
+    return TVSize;
+  }
 }

@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
+  GuestBedroom guestBedroom = new GuestBedroom("4",
+          "Tile", "White", "Ceiling Fan"
+          ,"King", "56in", "White", "White");
 
   @Test
   public void AddFloorReturnsTile(){
@@ -14,29 +17,25 @@ class MainTest {
 
   @Test
   public void CreateNewInstanceOfGuestBedroomAndPrintBedSize(){
-    GuestBedroom guestBedroom = new GuestBedroom();
     String expected = "King";
-    assertEquals(expected, guestBedroom.bedSize);
+    assertEquals(expected, guestBedroom.addBed("King"));
   }
 
   @Test
   public void CreateNewInstanceOfGuestBedroomAndPrintRoomColor(){
-    GuestBedroom guestBedroom = new GuestBedroom();
     String expected = "White";
-    assertEquals(expected, guestBedroom.color);
+    assertEquals(expected, guestBedroom.addPaint("White"));
   }
 
   @Test
   public void CreateNewInstanceOfGuestBedroomAndPrintLightSource(){
-    GuestBedroom guestBedroom = new GuestBedroom();
     String expected = "Ceiling Fan";
-    assertEquals(expected, guestBedroom.lightSource);
+    assertEquals(expected, guestBedroom.addLight("Ceiling Fan"));
   }
 
   @Test
   public void PrintLightSourceAndRoomColorFromGuestBedroom(){
-    GuestBedroom guestBedroom = new GuestBedroom();
-    String lightAndColor = guestBedroom.lightSource + " " + guestBedroom.color;
+    String lightAndColor = guestBedroom.addLight("Ceiling Fan") + " " + guestBedroom.addPaint("White");
     String expected = "Ceiling Fan White";
     assertEquals(expected, lightAndColor);
   }
